@@ -26,17 +26,16 @@ try{
     let Mtk    = parseInt(prompt(`Masukan Nilai MTK          : `));
 
     // let b_indo = 90;
-    // let b_ing  = 20;
+    // let b_ing  = true;
     // let Ipa    = 100;
     // let Mtk    = 100;
 
     let average = averageGrade(b_indo,b_ing,Ipa,Mtk);
     let grade = conditionGrade(average);
 
-    if(isNaN(average)) throw console.log(`\nData tidak benar`);
-    if(typeof gradVal == "boolean") throw console.log(`\nData tidak benar`);
-    if(typeof b_indo == "boolean" || typeof b_ing == "boolean" || typeof Ipa == "boolean" || typeof Mtk == "boolean") throw console.log(`\nData Boolean`);
-    if(average > 100 || average < 0) throw console.log(`\nNilai Terlalu Besar/kecil`);
+    if(isNaN(average)) throw console.log(`\nData nilai harus angka`);
+    if(typeof b_indo == "boolean" || typeof b_ing == "boolean" || typeof Ipa == "boolean" || typeof Mtk == "boolean") throw console.log(`\nData nilai tidak boleh boolean`);
+    if(average > 100 || average < 0) throw console.log(`\nNilai Terlalu Besar/kecil Tidak boleh < 0 dan > 100`);
         console.log(`\nRata - Rata : ${average}`);
         console.log(`Grade       : ${grade}`);
 }catch(e){
